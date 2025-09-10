@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria WhatsApp | Roteiros e Treinamentos Exclusivos</title>
+    <meta name="description" content="Desenvolvemos roteiros, e-books e treinamentos de atendimento no WhatsApp 100% personalizados para a realidade e as necessidades da sua empresa.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --primary-color: #007BFF; 
+            --secondary-color: #0056b3;
+            --dark-color: #2c3e50; 
+            --whatsapp-green: #25D366;
+            --text-color: #333;
+            --white-color: #FFFFFF;
+            --light-gray: #f8f9fa;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-family); background-color: var(--white-color); color: var(--text-color); line-height: 1.7; overflow-x: hidden; }
+        .container { max-width: 1100px; margin: auto; overflow: hidden; padding: 0 2rem; }
+        section { padding: 5rem 0; }
+
+        /* --- Animations --- */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s ease-out forwards; }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white-color);
+            text-align: center;
+            padding: 6rem 0;
+        }
+        .hero h1 { font-size: 3.2rem; font-weight: 900; margin-bottom: 1rem; line-height: 1.2; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero h1 span { color: var(--whatsapp-green); }
+        .hero p { font-size: 1.25rem; max-width: 750px; margin: 0 auto 2.5rem auto; font-weight: 400; }
+
+        /* --- CTA Button (reusable) --- */
+        .cta-button {
+            background-color: var(--whatsapp-green);
+            color: var(--white-color);
+            padding: 18px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        .cta-button:hover { background-color: #1EBE57; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5); }
+        .cta-button i { margin-right: 12px; }
+
+        /* --- Pain Points Section --- */
+        .pain-points { background-color: var(--light-gray); }
+        .pain-points h2 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; color: var(--dark-color); }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+        .pain-card {
+            background: var(--white-color);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* For animation */
+        }
+        .pain-card.visible { animation: fadeIn 0.5s ease-out forwards; }
+        .pain-card:hover { transform: translateY(-10px); box-shadow: 0 12px 35px rgba(0,0,0,0.1); }
+        .pain-card .icon-wrapper {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: var(--white-color);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        .pain-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--dark-color); }
+
+        /* --- Solution Section --- */
+        .solution { background-color: var(--white-color); }
+        .solution .container { display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; }
+        .solution-text { flex: 1; min-width: 300px; }
+        .solution-image { flex: 1; text-align: center; min-width: 300px; }
+        .solution-image img { max-width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .solution h2 { font-size: 2.8rem; color: var(--dark-color); margin-bottom: 1rem; line-height: 1.3; }
+        .solution .tagline { font-size: 1.2rem; color: var(--primary-color); font-weight: 600; margin-bottom: 2rem; }
+        .solution-item { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+        .solution-item i { font-size: 1.8rem; color: var(--primary-color); margin-right: 15px; margin-top: 5px; }
+        .solution-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        
+        /* --- Process Section --- */
+        .process { text-align: center; background-color: var(--dark-color); color: var(--white-color); }
+        .process h2 { font-size: 2.5rem; margin-bottom: 3rem; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; text-align: left; }
+        .process-step { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 10px; border-top: 4px solid var(--whatsapp-green); }
+        .process-step .step-number { font-size: 3rem; font-weight: 900; color: var(--whatsapp-green); line-height: 1; }
+        .process-step h3 { font-size: 1.3rem; margin: 0.5rem 0; }
+        .process-quote-box { background: rgba(0,0,0,0.2); border-left: 5px solid var(--whatsapp-green); padding: 1.5rem; border-radius: 8px; margin-top: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; text-align: center; }
+        .process-quote-box p { font-size: 1.1rem; font-style: italic; }
+
+        /* --- Final CTA Section --- */
+        .cta { text-align: center; background-color: var(--light-gray); }
+        .cta h2 { font-size: 2.8rem; margin-bottom: 1rem; color: var(--dark-color); }
+        .cta p { font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        /* --- Footer --- */
+        footer { text-align: center; padding: 2rem 0; background-color: #222; color: var(--white-color); }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 3rem 1rem; }
+            .container { padding: 0 1.5rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            h2, .solution h2, .cta h2 { font-size: 2.2rem; text-align: center; }
+            .solution .container { text-align: center; }
+            .solution-item { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container fade-in">
+            <h1>Sua Empresa é Única. Seu Atendimento no <span>WhatsApp</span> Também Deveria Ser.</h1>
+            <p>Deixe de usar scripts genéricos. Desenvolvemos roteiros e treinamentos exclusivos, moldados para a realidade do seu negócio e dos seus clientes.</p>
+            <a href="https://wa.me/556699271791?text=Ol%C3%A1!%20Gostaria%20de%20um%20diagn%C3%B3stico%20para%20desenvolver%20um%20roteiro%20de%20atendimento%20exclusivo%20para%20minha%20empresa." class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> Agendar um Diagnóstico
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAIN POINTS SECTION -->
+        <section class="pain-points">
+            <div class="container">
+                <h2>Seu WhatsApp é um canal de soluções ou de problemas?</h2>
+                <div class="grid">
+                    <div class="pain-card">
+                        <div class="icon-wrapper"><i class="fas fa-random"></i></div>
+                        <h3>Comunicação Inconsistente</h3>
+                        <p>Cada colaborador responde de um jeito, transmitindo informações desencontradas e minando a credibilidade da sua marca.</p>
+                    </div>
+                     <div class="pain-card">
+                        <div class="icon-wrapper"><i class="fas fa-user-slash"></i></div>
+                        <h3>Clientes Frustrados</h3>
+                        <p>A equipe se perde em longas conversas, não consegue resolver problemas com agilidade e acaba gerando insatisfação e chamados repetidos.</p>
+                    </div>
+                     <div class="pain-card">
+                        <div class="icon-wrapper"><i class="fas fa-sitemap"></i></div>
+                        <h3>Falta de Padrão e Processo</h3>
+                        <p>O atendimento é baseado no improviso. Sem um roteiro claro e profissional, cada nova interação é uma loteria para o cliente.</p>
+                    </div>
+                     <div class="pain-card">
+                        <div class="icon-wrapper"><i class="fas fa-user-plus"></i></div>
+                        <h3>Treinamento Lento e Desgastante</h3>
+                        <p>Integrar novos membros à equipe é um desafio. Sem um guia, eles demoram a performar e sobrecarregam os colegas mais experientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION SECTION -->
+        <section class="solution">
+            <div class="container">
+                <div class="solution-text">
+                    <h2 class="section-title">Uma Solução de Atendimento <strong>Construída para Você.</strong></h2>
+                    <p class="tagline">Nosso trabalho é uma consultoria artesanal, não uma fórmula pronta.</p>
+                    <div class="solution-item">
+                        <i class="fas fa-drafting-compass"></i>
+                        <div>
+                            <h3>Diagnóstico e Mapeamento</h3>
+                            <p>Primeiro, mergulhamos no seu negócio: ouvimos suas dores, entendemos seus produtos, seu público e seus processos de comunicação atuais.</p>
+                        </div>
+                    </div>
+                     <div class="solution-item">
+                        <i class="fas fa-book-open"></i>
+                        <div>
+                            <h3>Desenvolvimento Exclusivo do E-book</h3>
+                            <p>Criamos do zero um guia de atendimento com a "voz" da sua marca, com scripts para cada etapa, quebras de objeção e fluxos de resolução.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div>
+                            <h3>Treinamento Prático e Focado</h3>
+                            <p>Não entregamos apenas o material. Capacitamos sua equipe para que eles internalizem o discurso e atendam com confiança e profissionalismo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1287&auto=format&fit=crop" alt="Equipe de atendimento ao cliente em treinamento">
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION -->
+        <section class="process">
+            <div class="container">
+                <h2>Nosso Processo de Criação Exclusivo</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Briefing e Análise</h3>
+                        <p>Uma conversa profunda para entender seus desafios e objetivos. É o ponto de partida para um projeto de sucesso.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Proposta Sob Medida</h3>
+                        <p>Apresentamos um plano de ação detalhado com escopo, cronograma e o orçamento para o desenvolvimento da sua solução.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Criação e Validação</h3>
+                        <p>Desenvolvemos todo o material e apresentamos para sua validação, garantindo que ele esteja 100% alinhado à sua marca.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3>Treinamento e Entrega</h3>
+                        <p>Com o material aprovado, realizamos o treinamento com a equipe e entregamos a solução final para transformar seu atendimento.</p>
+                    </div>
+                </div>
+                <div class="process-quote-box">
+                    <p>"Como cada projeto é único, o investimento é calculado com base na complexidade e na necessidade de cada cliente. Solicite uma proposta sem compromisso."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="cta">
+            <div class="container">
+                <h2>Pronto para ter um Atendimento que Reflete a Excelência da sua Marca?</h2>
+                <p>Vamos conversar sobre seus desafios. Agende uma análise inicial gratuita e receba uma proposta personalizada para o seu negócio.</p>
+                <a href="https://wa.me/556699271791?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20de%20voc%C3%AAs%20e%20quero%20solicitar%20uma%20an%C3%A1lise%20e%20or%C3%A7amento%20para%20minha%20empresa." class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar Análise e Orçamento
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Consultoria em Atendimento. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for animations
+        const cards = document.querySelectorAll('.pain-card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 150); // Stagger the animation
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
