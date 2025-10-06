@@ -1,288 +1,377 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoria WhatsApp | Roteiros e Treinamentos Exclusivos</title>
-    <meta name="description" content="Desenvolvemos roteiros, e-books e treinamentos de atendimento no WhatsApp 100% personalizados para a realidade e as necessidades da sua empresa.">
 
-    <!-- Google Fonts -->
+    <title>SZ MKT DIGITAL | Transforme Atendimento em Lucro</title>
+    <meta name="description" content="Seu atendimento improvisado está custando dinheiro. Implemente um método profissional que encanta clientes e aumenta as vendas.">
+    <link rel="canonical" href="https://example.com/roteiros-pop">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Consultoria de Atendimento ao Cliente",
+      "provider": {
+        "@type": "Organization",
+        "name": "SZ MKT DIGITAL"
+      },
+      "name": "Criação de Roteiros de Atendimento POP Personalizados",
+      "description": "Desenvolvimento de ebook com roteiros de atendimento personalizados e treinamento prático para pequenas e médias empresas que desejam padronizar e profissionalizar o atendimento.",
+      "offers": {
+        "@type": "Offer",
+        "price": "450.00",
+        "priceCurrency": "BRL"
+      }
+    }
+    </script>
 
     <style>
-        :root {
-            --primary-color: #007BFF; 
-            --secondary-color: #0056b3;
-            --dark-color: #2c3e50; 
-            --whatsapp-green: #25D366;
-            --text-color: #333;
-            --white-color: #FFFFFF;
-            --light-gray: #f8f9fa;
-            --font-family: 'Poppins', sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-family); background-color: var(--white-color); color: var(--text-color); line-height: 1.7; overflow-x: hidden; }
-        .container { max-width: 1100px; margin: auto; overflow: hidden; padding: 0 2rem; }
-        section { padding: 5rem 0; }
-
-        /* --- Animations --- */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { animation: fadeIn 1s ease-out forwards; }
-
-        /* --- Hero Section --- */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-            color: var(--white-color);
-            text-align: center;
-            padding: 6rem 0;
-        }
-        .hero h1 { font-size: 3.2rem; font-weight: 900; margin-bottom: 1rem; line-height: 1.2; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .hero h1 span { color: var(--whatsapp-green); }
-        .hero p { font-size: 1.25rem; max-width: 750px; margin: 0 auto 2.5rem auto; font-weight: 400; }
-
-        /* --- CTA Button (reusable) --- */
-        .cta-button {
-            background-color: var(--whatsapp-green);
-            color: var(--white-color);
-            padding: 18px 40px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-        }
-        .cta-button:hover { background-color: #1EBE57; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5); }
-        .cta-button i { margin-right: 12px; }
-
-        /* --- Pain Points Section --- */
-        .pain-points { background-color: var(--light-gray); }
-        .pain-points h2 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; color: var(--dark-color); }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
-        .pain-card {
-            background: var(--white-color);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0; /* For animation */
-        }
-        .pain-card.visible { animation: fadeIn 0.5s ease-out forwards; }
-        .pain-card:hover { transform: translateY(-10px); box-shadow: 0 12px 35px rgba(0,0,0,0.1); }
-        .pain-card .icon-wrapper {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: var(--white-color);
-            border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        .pain-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--dark-color); }
-
-        /* --- Solution Section --- */
-        .solution { background-color: var(--white-color); }
-        .solution .container { display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; }
-        .solution-text { flex: 1; min-width: 300px; }
-        .solution-image { flex: 1; text-align: center; min-width: 300px; }
-        .solution-image img { max-width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .solution h2 { font-size: 2.8rem; color: var(--dark-color); margin-bottom: 1rem; line-height: 1.3; }
-        .solution .tagline { font-size: 1.2rem; color: var(--primary-color); font-weight: 600; margin-bottom: 2rem; }
-        .solution-item { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
-        .solution-item i { font-size: 1.8rem; color: var(--primary-color); margin-right: 15px; margin-top: 5px; }
-        .solution-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+        h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.2; }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.25rem); line-height: 1.3; }
         
-        /* --- Process Section --- */
-        .process { text-align: center; background-color: var(--dark-color); color: var(--white-color); }
-        .process h2 { font-size: 2.5rem; margin-bottom: 3rem; }
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; text-align: left; }
-        .process-step { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 10px; border-top: 4px solid var(--whatsapp-green); }
-        .process-step .step-number { font-size: 3rem; font-weight: 900; color: var(--whatsapp-green); line-height: 1; }
-        .process-step h3 { font-size: 1.3rem; margin: 0.5rem 0; }
-        .process-quote-box { background: rgba(0,0,0,0.2); border-left: 5px solid var(--whatsapp-green); padding: 1.5rem; border-radius: 8px; margin-top: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; text-align: center; }
-        .process-quote-box p { font-size: 1.1rem; font-style: italic; }
-
-        /* --- Final CTA Section --- */
-        .cta { text-align: center; background-color: var(--light-gray); }
-        .cta h2 { font-size: 2.8rem; margin-bottom: 1rem; color: var(--dark-color); }
-        .cta p { font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-        
-        /* --- Footer --- */
-        footer { text-align: center; padding: 2rem 0; background-color: #222; color: var(--white-color); }
-
-        /* --- Responsive --- */
-        @media (max-width: 900px) {
-            .grid { grid-template-columns: 1fr; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        @media (max-width: 768px) {
-            section { padding: 3rem 1rem; }
-            .container { padding: 0 1.5rem; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            h2, .solution h2, .cta h2 { font-size: 2.2rem; text-align: center; }
-            .solution .container { text-align: center; }
-            .solution-item { text-align: left; }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
         }
     </style>
-</head>
-<body>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <div class="container fade-in">
-            <h1>Sua Empresa é Única. Seu Atendimento no <span>WhatsApp</span> Também Deveria Ser.</h1>
-            <p>Deixe de usar scripts genéricos. Desenvolvemos roteiros e treinamentos exclusivos, moldados para a realidade do seu negócio e dos seus clientes.</p>
-            <a href="https://wa.me/556699271791?text=Ol%C3%A1!%20Gostaria%20de%20um%20diagn%C3%B3stico%20para%20desenvolver%20um%20roteiro%20de%20atendimento%20exclusivo%20para%20minha%20empresa." class="cta-button" target="_blank">
-                <i class="fab fa-whatsapp"></i> Agendar um Diagnóstico
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'seed': '#4A5C3D',
+                        'primary': '#4A5C3D',
+                        'on-primary': '#FFFFFF',
+                        'primary-container': '#CDE2BB',
+                        'on-primary-container': '#0A1E04',
+                        'secondary': '#6E4434',
+                        'on-secondary': '#FFFFFF',
+                        'secondary-container': '#F8DBCF',
+                        'on-secondary-container': '#260B00',
+                        'background': '#FCFCFA',
+                        'on-background': '#1A1C18',
+                        'surface': '#F9FAF7',
+                        'on-surface': '#1A1C18',
+                        'surface-variant': '#E0E4D7',
+                        'on-surface-variant': '#44483F',
+                        'outline': '#74796D',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased">
+
+    <header id="header" class="sticky top-0 bg-surface/80 backdrop-blur-lg z-50 border-b border-surface-variant/50 transition-shadow duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
+            <a href="#" class="font-display text-2xl font-bold text-primary">SZ MKT DIGITAL</a>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#problema" class="text-on-surface-variant hover:text-primary transition-colors duration-200">O Problema</a>
+                <a href="#solucao" class="text-on-surface-variant hover:text-primary transition-colors duration-200">A Solução</a>
+                <a href="#entrega" class="text-on-surface-variant hover:text-primary transition-colors duration-200">Como Funciona</a>
+            </div>
+
+            <a href="https://wa.me/5566999271791?text=Olá!%20Tenho%20interesse%20na%20consultoria%20de%20roteiros%20de%20atendimento%20da%20SZ%20MKT%20DIGITAL." target="_blank" class="hidden lg:inline-flex items-center gap-2 bg-primary text-on-primary font-semibold py-2.5 px-6 rounded-full shadow-sm hover:bg-on-primary-container hover:text-on-primary-container transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.2.4-.4.1-.1.2-.2.2-.4.1-.1.1-.3 0-.4-.1-.1-.6-1.5-.8-2-.1-.5-.3-.4-.5-.4h-.4c-.2 0-.5.2-.6.4-.1.2-.6.7-.6 1.7s.6 1.9.7 2.1c.1.1 1.1 1.7 2.7 2.4.4.2.7.3.9.4.5.2.9.1 1.2-.1.4-.2.6-.7.8-.9.1-.2.1-.4 0-.5-0.1zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+                <span>Fale com um Especialista</span>
             </a>
+
+            <button id="mobile-menu-button" class="lg:hidden p-2 rounded-full hover:bg-surface-variant focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Abrir menu de navegação">
+                <span class="material-symbols-outlined text-3xl text-on-surface">menu</span>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-surface shadow-lg">
+            <div class="flex flex-col items-center p-4 space-y-4">
+                <a href="#problema" class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors duration-200 w-full text-center py-2 rounded-md">O Problema</a>
+                <a href="#solucao" class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors duration-200 w-full text-center py-2 rounded-md">A Solução</a>
+                <a href="#entrega" class="mobile-menu-link text-on-surface-variant hover:text-primary transition-colors duration-200 w-full text-center py-2 rounded-md">Como Funciona</a>
+                <a href="https://wa.me/5566999271791?text=Olá!%20Tenho%20interesse%20na%20consultoria%20de%20roteiros%20de%20atendimento%20da%20SZ%20MKT%20DIGITAL." target="_blank" class="mobile-menu-link mt-4 inline-flex items-center gap-2 bg-primary text-on-primary font-semibold py-2.5 px-6 rounded-full w-full justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.2.4-.4.1-.1.2-.2.2-.4.1-.1.1-.3 0-.4-.1-.1-.6-1.5-.8-2-.1-.5-.3-.4-.5-.4h-.4c-.2 0-.5.2-.6.4-.1.2-.6.7-.6 1.7s.6 1.9.7 2.1c.1.1 1.1 1.7 2.7 2.4.4.2.7.3.9.4.5.2.9.1 1.2-.1.4-.2.6-.7.8-.9.1-.2.1-.4 0-.5-0.1zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+                    <span>Fale com um Especialista</span>
+                </a>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- PAIN POINTS SECTION -->
-        <section class="pain-points">
-            <div class="container">
-                <h2>Seu WhatsApp é um canal de soluções ou de problemas?</h2>
-                <div class="grid">
-                    <div class="pain-card">
-                        <div class="icon-wrapper"><i class="fas fa-random"></i></div>
-                        <h3>Comunicação Inconsistente</h3>
-                        <p>Cada colaborador responde de um jeito, transmitindo informações desencontradas e minando a credibilidade da sua marca.</p>
+        <section class="py-28 sm:py-36">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center lg:text-left animate-fadeInUp">
+                    <h1 class="font-extrabold tracking-tight text-on-background">
+                        Seu atendimento está <span class="text-primary">custando dinheiro</span>. Nós o transformamos em lucro.
+                    </h1>
+                    <p class="mt-8 text-lg leading-8 text-on-surface-variant">
+                        Implemente um método de atendimento profissional que encanta clientes e aumenta suas vendas, sem o caos da improvisação.
+                    </p>
+                    <div class="mt-10">
+                        <a href="https://wa.me/5566999271791?text=Olá!%20Tenho%20interesse%20na%20consultoria%20de%20roteiros%20de%20atendimento%20da%20SZ%20MKT%20DIGITAL." target="_blank" class="inline-flex items-center gap-3 bg-primary text-on-primary font-bold py-4 px-10 text-lg rounded-full shadow-lg hover:bg-on-primary-container hover:text-on-primary-container transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.2.4-.4.1-.1.2-.2.2-.4.1-.1.1-.3 0-.4-.1-.1-.6-1.5-.8-2-.1-.5-.3-.4-.5-.4h-.4c-.2 0-.5.2-.6.4-.1.2-.6.7-.6 1.7s.6 1.9.7 2.1c.1.1 1.1 1.7 2.7 2.4.4.2.7.3.9.4.5.2.9.1 1.2-.1.4-.2.6-.7.8-.9.1-.2.1-.4 0-.5-0.1zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+                            <span>Transformar Meu Atendimento Agora</span>
+                        </a>
                     </div>
-                     <div class="pain-card">
-                        <div class="icon-wrapper"><i class="fas fa-user-slash"></i></div>
-                        <h3>Clientes Frustrados</h3>
-                        <p>A equipe se perde em longas conversas, não consegue resolver problemas com agilidade e acaba gerando insatisfação e chamados repetidos.</p>
-                    </div>
-                     <div class="pain-card">
-                        <div class="icon-wrapper"><i class="fas fa-sitemap"></i></div>
-                        <h3>Falta de Padrão e Processo</h3>
-                        <p>O atendimento é baseado no improviso. Sem um roteiro claro e profissional, cada nova interação é uma loteria para o cliente.</p>
-                    </div>
-                     <div class="pain-card">
-                        <div class="icon-wrapper"><i class="fas fa-user-plus"></i></div>
-                        <h3>Treinamento Lento e Desgastante</h3>
-                        <p>Integrar novos membros à equipe é um desafio. Sem um guia, eles demoram a performar e sobrecarregam os colegas mais experientes.</p>
+                </div>
+                <div class="animate-fadeInUp flex justify-center items-center" style="animation-delay: 0.2s;">
+                    <div class="w-72 h-[34rem] bg-gray-800 rounded-[3rem] p-4 shadow-2xl transform rotate-3">
+                        <div class="w-full h-full bg-surface rounded-[2.2rem] flex flex-col justify-center items-center p-4">
+                             <div class="text-center">
+                                 <div class="bg-green-500 p-5 rounded-full inline-block">
+                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.447-4.435-9.884-9.888-9.884-5.448 0-9.886 4.434-9.889 9.885.002 2.024.603 3.962 1.696 5.665l-.34 1.218 1.228-.324z"/></svg>
+                                 </div>
+                                 <p class="mt-4 font-semibold text-on-surface">Nova mensagem de Cliente</p>
+                                 <p class="text-sm text-on-surface-variant">"Olá, tenho interesse no seu serviço!"</p>
+                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SOLUTION SECTION -->
-        <section class="solution">
-            <div class="container">
-                <div class="solution-text">
-                    <h2 class="section-title">Uma Solução de Atendimento <strong>Construída para Você.</strong></h2>
-                    <p class="tagline">Nosso trabalho é uma consultoria artesanal, não uma fórmula pronta.</p>
-                    <div class="solution-item">
-                        <i class="fas fa-drafting-compass"></i>
-                        <div>
-                            <h3>Diagnóstico e Mapeamento</h3>
-                            <p>Primeiro, mergulhamos no seu negócio: ouvimos suas dores, entendemos seus produtos, seu público e seus processos de comunicação atuais.</p>
-                        </div>
+        <section id="problema" class="bg-surface py-24 sm:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-bold tracking-tight">O caos de um atendimento sem padrão</h2>
+                    <p class="mt-4 text-lg text-on-surface-variant">Se você reconhece algum destes sinais, sua empresa está perdendo clientes e dinheiro todos os dias.</p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-background p-6 rounded-2xl border border-surface-variant/50">
+                        <h3 class="font-display text-lg font-semibold">Respostas Inconsistentes</h3>
+                        <p class="mt-2 text-on-surface-variant">Sua marca soa amadora e mina a confiança que tanto lutou para construir.</p>
                     </div>
-                     <div class="solution-item">
-                        <i class="fas fa-book-open"></i>
-                        <div>
-                            <h3>Desenvolvimento Exclusivo do E-book</h3>
-                            <p>Criamos do zero um guia de atendimento com a "voz" da sua marca, com scripts para cada etapa, quebras de objeção e fluxos de resolução.</p>
-                        </div>
+                    <div class="bg-background p-6 rounded-2xl border border-surface-variant/50">
+                        <h3 class="font-display text-lg font-semibold">Clientes Confusos</h3>
+                        <p class="mt-2 text-on-surface-variant">Informações erradas ou demoradas enviam seus clientes direto para a concorrência.</p>
                     </div>
-                    <div class="solution-item">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <div>
-                            <h3>Treinamento Prático e Focado</h3>
-                            <p>Não entregamos apenas o material. Capacitamos sua equipe para que eles internalizem o discurso e atendam com confiança e profissionalismo.</p>
-                        </div>
+                    <div class="bg-background p-6 rounded-2xl border border-surface-variant/50">
+                        <h3 class="font-display text-lg font-semibold">Oportunidades Perdidas</h3>
+                        <p class="mt-2 text-on-surface-variant">Sua equipe gasta tempo 'apagando fogos' em vez de focar em aumentar o ticket médio.</p>
+                    </div>
+                    <div class="bg-background p-6 rounded-2xl border border-surface-variant/50">
+                        <h3 class="font-display text-lg font-semibold">Qualidade que Depende da Sorte</h3>
+                        <p class="mt-2 text-on-surface-variant">Um cliente satisfeito não pode ser um acaso. Deve ser o resultado de um processo confiável.</p>
                     </div>
                 </div>
-                <div class="solution-image">
-                    <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1287&auto=format&fit=crop" alt="Equipe de atendimento ao cliente em treinamento">
+                <div class="mt-16 text-center">
+                    <p class="font-display text-2xl sm:text-3xl text-secondary font-semibold">“Um atendimento excelente não acontece por acaso. Acontece com um método.”</p>
                 </div>
             </div>
         </section>
 
-        <!-- PROCESS SECTION -->
-        <section class="process">
-            <div class="container">
-                <h2>Nosso Processo de Criação Exclusivo</h2>
-                <div class="process-grid">
-                    <div class="process-step">
-                        <div class="step-number">01</div>
-                        <h3>Briefing e Análise</h3>
-                        <p>Uma conversa profunda para entender seus desafios e objetivos. É o ponto de partida para um projeto de sucesso.</p>
+        <section id="solucao" class="py-24 sm:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-bold tracking-tight">O Método POP: A sua equipe falando a língua do seu cliente</h2>
+                    <p class="mt-4 text-lg text-on-surface-variant">Substitua a incerteza por um processo claro, que transforma cada interação numa experiência memorável e lucrativa.</p>
+                </div>
+                <div class="mt-16 max-w-4xl mx-auto space-y-10">
+                    <div class="flex flex-col sm:flex-row items-start gap-4">
+                        <span class="material-symbols-outlined text-4xl text-primary mt-1" aria-hidden="true">sync_alt</span>
+                        <div>
+                            <h3 class="font-display text-xl font-semibold">Comunicação que Converte</h3>
+                            <p class="mt-1 text-on-surface-variant">Alinhe toda a sua equipe com um discurso único e persuasivo que guia o cliente do interesse à compra de forma natural e eficiente.</p>
+                        </div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">02</div>
-                        <h3>Proposta Sob Medida</h3>
-                        <p>Apresentamos um plano de ação detalhado com escopo, cronograma e o orçamento para o desenvolvimento da sua solução.</p>
+                    <div class="flex flex-col sm:flex-row items-start gap-4">
+                        <span class="material-symbols-outlined text-4xl text-primary mt-1" aria-hidden="true">trending_up</span>
+                        <div>
+                            <h3 class="font-display text-xl font-semibold">Crescimento Previsível</h3>
+                            <p class="mt-1 text-on-surface-variant">Com um processo definido, a satisfação do cliente e as taxas de conversão tornam-se métricas que você pode controlar e escalar.</p>
+                        </div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">03</div>
-                        <h3>Criação e Validação</h3>
-                        <p>Desenvolvemos todo o material e apresentamos para sua validação, garantindo que ele esteja 100% alinhado à sua marca.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">04</div>
-                        <h3>Treinamento e Entrega</h3>
-                        <p>Com o material aprovado, realizamos o treinamento com a equipe e entregamos a solução final para transformar seu atendimento.</p>
+                    <div class="flex flex-col sm:flex-row items-start gap-4">
+                        <span class="material-symbols-outlined text-4xl text-primary mt-1" aria-hidden="true">task_alt</span>
+                        <div>
+                            <h3 class="font-display text-xl font-semibold">Eficiência Operacional</h3>
+                            <p class="mt-1 text-on-surface-variant">Elimine o retrabalho e as dúvidas. Dê à sua equipe a confiança para resolver problemas rapidamente e focar no que gera receita.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="process-quote-box">
-                    <p>"Como cada projeto é único, o investimento é calculado com base na complexidade e na necessidade de cada cliente. Solicite uma proposta sem compromisso."</p>
+            </div>
+        </section>
+        
+        <section id="resultados-esperados" class="bg-surface py-24 sm:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-bold tracking-tight">Resultados que Você Pode Esperar</h2>
+                    <p class="mt-4 text-lg text-on-surface-variant">A padronização não é apenas sobre organização, é sobre crescimento mensurável.</p>
+                </div>
+                <div class="mt-16">
+                    <div class="chart-container bg-background p-4 sm:p-6 rounded-2xl border border-surface-variant/50">
+                        <canvas id="resultadosChart" aria-label="Gráfico de barras mostrando o aumento esperado na satisfação do cliente e redução no tempo de atendimento" role="img"></canvas>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- FINAL CTA SECTION -->
-        <section class="cta">
-            <div class="container">
-                <h2>Pronto para ter um Atendimento que Reflete a Excelência da sua Marca?</h2>
-                <p>Vamos conversar sobre seus desafios. Agende uma análise inicial gratuita e receba uma proposta personalizada para o seu negócio.</p>
-                <a href="https://wa.me/556699271791?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20de%20voc%C3%AAs%20e%20quero%20solicitar%20uma%20an%C3%A1lise%20e%20or%C3%A7amento%20para%20minha%20empresa." class="cta-button" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Solicitar Análise e Orçamento
-                </a>
+        <section id="entrega" class="py-24 sm:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="font-bold tracking-tight">Uma solução completa, não apenas um material</h2>
+                <p class="mt-4 text-lg max-w-3xl mx-auto text-on-surface-variant">Você recebe tudo o que precisa para transformar seu atendimento de ponta a ponta.</p>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                     <div class="bg-surface p-6 rounded-2xl border border-surface-variant/50">
+                        <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">menu_book</span>
+                        <h3 class="font-display text-lg font-semibold mt-2">Ebook Personalizado</h3>
+                        <p class="mt-1 text-on-surface-variant">Roteiros adaptados para a sua realidade: WhatsApp, telefone ou Instagram.</p>
+                    </div>
+                    <div class="bg-surface p-6 rounded-2xl border border-surface-variant/50">
+                        <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">groups</span>
+                        <h3 class="font-display text-lg font-semibold mt-2">Treinamento Prático</h3>
+                        <p class="mt-1 text-on-surface-variant">Capacitação presencial da sua equipe para garantir a aplicação correta e eficaz dos roteiros.</p>
+                    </div>
+                    <div class="bg-surface p-6 rounded-2xl border border-surface-variant/50">
+                        <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">checklist</span>
+                        <h3 class="font-display text-lg font-semibold mt-2">Análise de Pontos Críticos</h3>
+                        <p class="mt-1 text-on-surface-variant">Identificamos os principais gargalos do seu atendimento para focar no que mais importa.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Consultoria em Atendimento. Todos os direitos reservados.</p>
+    
+    <footer class="bg-secondary-container">
+        <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <h2 class="font-bold text-on-secondary-container">
+                Pare de perder clientes por falhas no atendimento.
+            </h2>
+            <p class="mt-4 text-xl text-on-secondary-container/80">Dê à sua equipe a confiança que ela precisa. Dê ao seu cliente a experiência que ele merece.</p>
+            <div class="mt-10">
+                <a href="https://wa.me/5566999271791?text=Olá!%20Tenho%20interesse%20na%20consultoria%20de%20roteiros%20de%20atendimento%20da%20SZ%20MKT%20DIGITAL." target="_blank" class="inline-flex items-center gap-3 bg-secondary text-on-secondary font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-on-secondary-container hover:text-on-secondary-container transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-on-secondary-container focus:ring-offset-2 focus:ring-offset-secondary-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.2.4-.4.1-.1.2-.2.2-.4.1-.1.1-.3 0-.4-.1-.1-.6-1.5-.8-2-.1-.5-.3-.4-.5-.4h-.4c-.2 0-.5.2-.6.4-.1.2-.6.7-.6 1.7s.6 1.9.7 2.1c.1.1 1.1 1.7 2.7 2.4.4.2.7.3.9.4.5.2.9.1 1.2-.1.4-.2.6-.7.8-.9.1-.2.1-.4 0-.5-0.1zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+                    <span>Falar no WhatsApp Agora</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-on-secondary-container/20 py-6">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-on-secondary-container/60 text-sm">
+                <p>&copy; 2025 SZ MKT DIGITAL. Todos os direitos reservados. | <a href="#privacy" class="hover:underline">Política de Privacidade</a></p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Simple Intersection Observer for animations
-        const cards = document.querySelectorAll('.pain-card');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 150); // Stagger the animation
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 bg-on-background p-4 text-background z-50 shadow-2xl md:flex items-center justify-center gap-x-8 gap-y-4 flex-wrap">
+        <p class="text-sm text-center md:text-left">Utilizamos cookies para oferecer a melhor experiência. Ao continuar, você concorda com nossa <a href="#privacy" class="font-semibold underline hover:text-gray-200">Política de Privacidade</a>.</p>
+        <button id="accept-cookies" class="bg-primary hover:bg-on-primary-container text-on-primary hover:text-on-primary-container font-semibold py-2 px-6 rounded-full text-sm transition-colors">Entendi e aceito</button>
+    </div>
 
-        cards.forEach(card => {
-            observer.observe(card);
+    <a href="https://wa.me/5566999271791?text=Olá!%20Tenho%20interesse%20na%20consultoria%20de%20roteiros%20de%20atendimento%20da%20SZ%20MKT%20DIGITAL." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform duration-300 transform hover:scale-110 z-50" aria-label="Fale conosco no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.447-4.435-9.884-9.888-9.884-5.448 0-9.886 4.434-9.889 9.885.002 2.024.603 3.962 1.696 5.665l-.34 1.218 1.228-.324zM12 4.475c1.32 0 2.61.264 3.804.782l-.462.278-1.042.625c-1.18.71-2.525.68-3.674-.085l-.576-.384c-.588-.392-1.258-.616-1.96-.616h-.01c-3.14 0-5.7 2.56-5.7 5.7s2.56 5.7 5.7 5.7c.652 0 1.29-.118 1.88-.35l.93-.372c1.176-.47 2.544-.41 3.66.16l1.196.61c.45.23.92.422 1.393.576.54.172 1.1.258 1.662.258 3.14 0 5.7-2.56 5.7-5.7s-2.56-5.7-5.7-5.7h-.01c-.702 0-1.372.224-1.96.616l-.576.384c-1.148.765-2.494.795-3.674.085l-1.042-.625-.462-.278C9.39 4.74 10.68 4.475 12 4.475z"/></svg>
+    </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptButton = document.getElementById('accept-cookies');
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.remove('hidden');
+                cookieBanner.classList.add('flex');
+            }
+            acceptButton.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'true');
+                cookieBanner.style.transform = 'translateY(100%)';
+                cookieBanner.style.opacity = '0';
+                setTimeout(() => cookieBanner.style.display = 'none', 300);
+            });
+            cookieBanner.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenuLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('shadow-md', window.scrollY > 50);
+            });
+
+            const ctx = document.getElementById('resultadosChart');
+            if(ctx) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Antes do POP', 'Depois do POP'],
+                        datasets: [{
+                            label: 'Satisfação do Cliente (%)',
+                            data: [65, 92],
+                            backgroundColor: '#CDE2BB',
+                            borderColor: '#4A5C3D',
+                            borderWidth: 2,
+                            borderRadius: 8,
+                        }, {
+                            label: 'Tempo de Atendimento (min)',
+                            data: [15, 8],
+                            backgroundColor: '#F8DBCF',
+                            borderColor: '#6E4434',
+                            borderWidth: 2,
+                            borderRadius: 8,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: '#E0E4D7' }, ticks: { color: '#44483F' } },
+                            x: { grid: { display: false }, ticks: { color: '#44483F' } }
+                        },
+                        plugins: {
+                            legend: { position: 'top', labels: { color: '#1A1C18' } },
+                            tooltip: {
+                                backgroundColor: '#1A1C18',
+                                titleFont: { size: 14, family: 'Poppins' },
+                                bodyFont: { size: 12, family: 'Inter' },
+                                cornerRadius: 8, padding: 12, displayColors: true,
+                                borderColor: '#44483F', borderWidth: 1
+                            }
+                        }
+                    }
+                });
+            }
+
+            const animatedElements = document.querySelectorAll('.animate-fadeInUp');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
